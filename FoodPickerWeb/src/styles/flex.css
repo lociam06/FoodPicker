@@ -1,0 +1,17 @@
+.flex{
+    display: flex;
+}
+.gap-1{gap: 1rem}
+.gap-2{gap: 2rem}
+.justifie-beetween{
+    justify-content: space-between;
+}
+.justifie-end{
+    justify-content: end;
+}
+.justifie-center{
+    justify-content: center;
+}
+.aling-items-center{
+    align-items: center;
+}

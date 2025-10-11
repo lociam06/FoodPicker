@@ -1,0 +1,30 @@
+Foods{
+    id
+    name
+    eat_time
+    rate
+    min_price
+    max_price
+    healthy
+    dificult
+    recipe_id
+    approximate_preparation_time
+}
+
+Recipes{
+    id
+    food_id
+    procedures
+}
+
+Recipie_ingredients{
+    id
+    quantity
+    id_recipie
+    id_ingredient
+}
+
+Ingredients{
+    id
+    name
+}

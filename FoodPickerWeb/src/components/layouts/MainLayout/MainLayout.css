@@ -1,0 +1,13 @@
+.MainLayout{
+    background-color: var(--background);
+    padding-top: 5rem;
+}
+.background-svg1{
+    position: absolute;
+    top: -12rem;
+    left: 0;
+    transform: rotateZ(180deg);
+}
+main{
+    position: relative;
+}

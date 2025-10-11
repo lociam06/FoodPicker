@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Base para todos los scrollbars (elementos que sí tengan scroll) */
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Scrollbar del documento (página completa) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+        background-color: var(--sec-background);
+}
+
+/* Track (riel) */
+*::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+/* Cambia el track cuando el contenedor (no html/body) está hover */
+*:not(html):not(body):hover::-webkit-scrollbar-track {
+    background-color: #EEEEEE;
+}
+
+/* Thumb (pulgar) */
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+}
+
+/* Cambia el thumb cuando el contenedor (no html/body) está hover */
+*:not(html):not(body):hover::-webkit-scrollbar-thumb {
+    background-color: #AAAAAA;
+}
+
+/* Colores del scrollbar raíz (página) */
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    width: 100px;
+}
+
+i {
+    color: #000;
+}
+
+input,
+select,
+textarea {
+    font-size: 1.1rem;
+    padding: 0.3rem;
+    border-radius: 10px;
+    background-color: var(--input-background);
+    border: 1px solid #CCC;
+    min-width: 1rem;
+    font-family: inherit;
+}

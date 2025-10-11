@@ -1,0 +1,186 @@
+#edit-food-page{
+    margin: 0 10rem;
+}
+#edit-food-page .food-title-input{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    flex-grow: 1;
+}
+#edit-food-page .food-content{
+    display: flex;
+    background-color: var(--section-background);
+    padding: 2rem 2rem;
+    gap: 2rem;
+}
+#edit-food-page .food-content .images{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#edit-food-page .food-content .more-images{
+    display: flex;
+    gap: 5px;
+    background-color: var(--sec-background);
+    border-radius: 10px;
+    padding: 0.3rem;
+    border: 2px solid #666;
+}
+#edit-food-page .food-content .more-images img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 1px solid #333;
+    transition: 0.4s;
+}
+#edit-food-page .food-content .more-images img:hover{
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+#edit-food-page .food-content .more-images .add-image-btn{
+    background-color: var(--acent);
+    border-radius: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+#edit-food-page .food-content .actual-image{
+    position: relative;
+}
+#edit-food-page .food-content .actual-image img{
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#edit-food-page .food-content .actual-image .add-actual-image-btn{
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    border-radius: 20px;
+    background-color: #CCC;
+    font-size: 3rem;
+}
+#edit-food-page .food-content .actual-image .carrousel-btn{
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+}
+#edit-food-page .food-content .actual-image:hover .carrousel-btn{
+    opacity: 1;
+}
+#edit-food-page .food-content .actual-image button i{
+    text-shadow: 0 0 1px #FFF;
+}
+#edit-food-page .food-content .actual-image button.left-btn, #edit-food-page .food-content .actual-image button.right-btn{
+    top: 50%;
+    transform: translateY(-50%);
+}
+#edit-food-page .food-content .actual-image button.left-btn{
+    left: 1rem;
+}
+#edit-food-page .food-content .actual-image button.right-btn{
+    right: 1rem;
+}
+#edit-food-page .food-content .actual-image button.delete-btn{
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+}
+#edit-food-page .food-content .actual-image button.delete-btn i{
+    color: #CC4444;
+}
+
+#edit-food-page .food-content .info{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+#edit-food-page .food-content .info div{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+#edit-food-page .food-content .info textarea{
+    width: 100%;
+    resize: none;
+}
+
+/*Receta*/
+/*Ingredientes*/
+#edit-food-page .recipe-container .ingredients-container .ingredients{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+#edit-food-page .recipe-container .ingredients-container .ingredient select{
+    max-width: 7rem;
+}
+#edit-food-page .recipe-container .ingredients-container .ingredient{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--section-background);
+    gap: 1rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+#edit-food-page .recipe-container .ingredients-container .ingredient > div{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#edit-food-page .recipe-container .ingredients-container .ingredient .delete-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    width: 4rem;
+    background-color: var(--acent);
+}
+#edit-food-page .recipe-container .ingredients-container .ingredient input[type="checkbox"]{
+    font-size: 2rem;
+    height: 1rem;
+}
+
+/*Procedimientos*/
+#edit-food-page .recipe-container .procedures{
+    margin-top: 2rem;
+}
+#edit-food-page .recipe-container .procedures .procedures-list{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+#edit-food-page .recipe-container .procedures .procedures-list .procedure-line{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+#edit-food-page .recipe-container .procedures .procedures-list .procedure-line textarea{
+    width: 89%;
+    resize: vertical;
+    min-height: 2rem;
+    max-height: 6rem;
+}
+#edit-food-page .recipe-container .procedures .procedures-list .delete-btn{
+    background-color: var(--acent);
+    width: 7%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#edit-food-page .recipe-container .procedures .procedures-list .btn{
+    margin-left: 2rem;
+}
+
+#edit-food-page .action-btn button{
+    padding: 0.5rem 1rem;
+}

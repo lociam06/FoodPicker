@@ -1,0 +1,26 @@
+.foods-carrousel{
+    margin-top: 2rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.foods-carrousel-slider{
+    display: flex;
+    width: max-content;
+    transform: translateX(20rem);
+    transition: .5s;
+}
+
+.foods-carrousel button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+}
+.foods-carrousel button.prev-index-btn{
+    left: 18%;
+}
+.foods-carrousel button.next-index-btn{
+    right: 18%;
+}

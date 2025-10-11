@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    padding: 0 2rem;
+    border-radius: 15px;
+    gap: 1rem;
+    background-color: var(--primary);
+    color: var(--sec-text-color);
+    z-index: 10;
+}
+nav div{
+    display: flex;
+    align-items: center;
+}
+nav .brand{
+    gap: 1rem;
+    margin-right: 1.5rem;
+}
+nav .brand img{
+    width: 30px;
+}
+
+nav .separator{
+    height: 1.5rem;
+    width: 2px;
+    background-color: #FFF;
+    border-radius: 20px;
+}
+
+nav .tab-links a{
+    color: var(--sec-text-color);
+    display: inline-block;
+    padding: 1.4rem;
+    text-decoration: none;
+    background-color: var(--primary);
+    transition: .3s;
+}
+nav .tab-links a:hover{
+    transition: .4s;
+    filter: brightness(1.4);
+}

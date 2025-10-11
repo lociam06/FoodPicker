@@ -1,0 +1,46 @@
+.food-element{
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 0 4px #CCC;
+    transition: .4s;
+}
+.food-element:hover{
+    background-color: #EEE;
+    cursor: pointer;
+}
+.food-element .title{
+    margin: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.food-element .content{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    justify-content: space-between;
+}
+.food-element .content img{
+    flex-grow: 1;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 15px;
+    width: 55%;
+}
+
+.food-element .content .info{
+    width: 45%;
+}
+
+.food-element .content ul{
+    max-height: 8rem;
+    overflow-y: scroll;
+    color: var(--thi-text-color);
+    transition: .3s;
+}
+.food-element .content li span{
+    overflow-x: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+

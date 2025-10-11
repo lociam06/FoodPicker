@@ -1,0 +1,20 @@
+:root {
+    /*Colors*/
+    --primary: #2A324B;
+    --secondary: #F7C59F;
+    --background: #E1E5EE;
+    --sec-background: #C7CCDB;
+    --acent: #767B91;
+    --pri-text-color: #191515;
+    --sec-text-color: #FFFFFF;
+    --thi-text-color: #666666;
+    --section-background: #FFFFFF;
+    --input-background: #EEEEEE;
+
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}

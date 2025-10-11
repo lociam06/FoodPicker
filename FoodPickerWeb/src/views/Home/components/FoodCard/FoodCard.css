@@ -1,0 +1,31 @@
+.food-card{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #FFF;
+    min-height: 21rem;
+    width: 40rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px #CCC;
+    border-radius: 15px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.food-card.no-active{
+    transform: scale(0.5);
+    cursor: default;
+}
+
+.food-card img{
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.food-card .card-title{
+    text-align: center;
+    margin: 0;
+    margin-top: 0.5rem;
+}

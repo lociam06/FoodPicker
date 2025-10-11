@@ -1,0 +1,31 @@
+h1.main-title{
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/*Parte donde seleccionas que tiempo es de comer*/
+.food-time-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.food-time-container .food-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    background-color: var(--section-background);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px #CCC;
+    border-radius: 15px;
+}
+.food-time span{
+    font-weight: bold;
+}
+.food-time div{
+    display: flex;
+    gap: 0.2rem;
+}
+.food-time div button.active{
+    background-color: var(--secondary);
+}
