@@ -13,9 +13,11 @@ function Home(){
 
         if(actualHour <= 1.59) setFoodTime("Cena");
         else if(actualHour >= 2 && actualHour <= 11.59) setFoodTime("Desayuno");
-        else if(actualHour >= 12 && actualHour <= 3.59) setFoodTime("Comida");
-        else if(actualHour >= 16 && actualHour <= 18.59) setFoodTime("Almuerzo");
+        else if(actualHour >= 12 && actualHour <= 15.59) setFoodTime("Almuerzo");
+        else if(actualHour >= 16 && actualHour <= 18.59) setFoodTime("Merienda");
         else if(actualHour >= 19) setFoodTime("Cena");
+
+        console.log(actualHour);
     }, []);
 
     const [foodList, setFoodList] = useState<Food[]>([]);
@@ -30,6 +32,7 @@ function Home(){
     }, []);
 
     useEffect(() => {
+        console.log(foodList);
         const filteredFoods = foodList.filter(x => x.eat_time == foodTime);
         setFoodListDisplay(filteredFoods)
 

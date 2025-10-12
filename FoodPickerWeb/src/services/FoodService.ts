@@ -4,10 +4,12 @@ import type { FoodImage } from "../models/FoodImage";
 import type { Recipe } from "../models/Recipe";
 import type { RecipeIngredient } from "../models/RecipeIngredient";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 class FoodService{
     public static async GetAllFoods(): Promise<Food[]>{
         let foodList: Food[] = [];
-        await fetch("https://localhost:7204/api/foods")
+        await fetch(`${API_URL}/foods`)
         .then((response) => {
             if(!response.ok){
                 throw new Error("Error al obtener foods");
@@ -22,7 +24,7 @@ class FoodService{
 
     public static async GetFoodById(id: number): Promise<Food> {
         try {
-            const response = await fetch(`https://localhost:7204/api/foods/${id}`);
+            const response = await fetch(`${API_URL}/foods/${id}`);
             if (!response.ok) {
                 throw new Error("Error al obtener el alimento");
             }
@@ -37,7 +39,7 @@ class FoodService{
 
     public static async GetFoodIngredients(id: number): Promise<ApiFoodIngredientsResponse[]> {
         let IngredientsList: ApiFoodIngredientsResponse[] = [];
-        await fetch(`https://localhost:7204/api/foods/${id}/ingredients`)
+        await fetch(`${API_URL}/foods/${id}/ingredients`)
         .then((response) => {
             if(!response.ok){
                 throw new Error("Error al obtener los ingredientes");
@@ -52,7 +54,7 @@ class FoodService{
 
     public static async CreateFood(food: Food, recipe: Recipe, ingredients: RecipeIngredient[], images: FoodImage[]) : Promise<Food | null>{
         //Añadir comida
-        const foodResponse = await fetch(("https://localhost:7204/api/foods"),{
+        const foodResponse = await fetch(`${API_URL}/foods`,{
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -73,7 +75,7 @@ class FoodService{
         
         //Añadir reseta
         recipe.foodId = newFood?.id || 0;
-        const recipeResponse = await fetch(("https://localhost:7204/api/recipes"),{
+        const recipeResponse = await fetch(`${API_URL}/recipes`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -98,7 +100,7 @@ class FoodService{
         
         for(const ing of ingredientsList){
             console.log(ing); 
-            let ingResponse = await fetch(("https://localhost:7204/api/RecipeIngredients"),{
+            let ingResponse = await fetch(`${API_URL}/RecipeIngredients`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +125,7 @@ class FoodService{
                 imageFormData.append('images', blod, image.url);
             };
             
-            const imgaesResponse = await fetch((`https://localhost:7204/api/foods/${newRecipe?.id}/image`),{
+            const imgaesResponse = await fetch(`${API_URL}/foods/${newRecipe?.id}/image`,{
                 method: 'POST',
                 body: imageFormData, 
             });
@@ -138,7 +140,7 @@ class FoodService{
 
     public static async UpdateFood(food: Food, recipe: Recipe, ingredients: RecipeIngredient[], images: FoodImage[]) : Promise<Food | null>{
         //Actualizar comida
-        const foodResponse = await fetch((`https://localhost:7204/api/foods/${food.id}`),{
+        const foodResponse = await fetch(`${API_URL}/foods/${food.id}`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -159,7 +161,7 @@ class FoodService{
         }
         
         //Actualizar reseta
-        await fetch((`https://localhost:7204/api/recipes/${recipe.id}`),{
+        await fetch(`${API_URL}/recipes/${recipe.id}`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -173,7 +175,7 @@ class FoodService{
         }
         
         //Actualizar ingredientes
-        let ingResponse = await fetch((`https://localhost:7204/api/foods/${food.id}/ingredients`),{
+        let ingResponse = await fetch(`${API_URL}/foods/${food.id}/ingredients`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -197,7 +199,7 @@ class FoodService{
                 imageFormData.append('images', blod, image.url);
             };
             
-            const imgaesResponse = await fetch((`https://localhost:7204/api/foods/${food.id}/image`),{
+            const imgaesResponse = await fetch(`${API_URL}/foods/${food.id}/image`,{
                 method: 'PUT',
                 body: imageFormData, 
             });
@@ -212,7 +214,7 @@ class FoodService{
 
     public static async DeleteFood(id: number) : Promise<boolean>{
         try {
-            const response = await fetch(`https://localhost:7204/api/foods/${id}`, 
+            const response = await fetch(`${API_URL}/foods/${id}`, 
                 {
                     method: "DELETE"
                 }

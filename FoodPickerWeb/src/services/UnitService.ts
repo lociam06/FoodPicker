@@ -1,9 +1,11 @@
 import type { Unit } from "../models/Unit";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 class UnitService{
     public static async GetAllUnits(): Promise<Unit[]> {
         let unitsList: Unit[] = [];
-        await fetch("https://localhost:7204/api/units")
+        await fetch(`${API_URL}/units`)
         .then(response => {
             if(!response.ok){
                 throw new Error("Error al hacer fecth")
