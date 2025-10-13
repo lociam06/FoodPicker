@@ -39,7 +39,8 @@ function FoodsCarrousel(props: FoodsCarrouselProps){
     }
     //style={{ transform: `translateX(-${current * 100}%)` }}
     let sliderStyles = {
-        transform: `translateX(${activeIndex * -40 + 20}rem)`
+        transform: `translateX(${activeIndex * -50}vw)`,
+        marginLeft: `25vw`
     }
     return(
         <div className="foods-carrousel">
