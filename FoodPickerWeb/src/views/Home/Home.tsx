@@ -16,8 +16,6 @@ function Home(){
         else if(actualHour >= 12 && actualHour <= 15.59) setFoodTime("Almuerzo");
         else if(actualHour >= 16 && actualHour <= 18.59) setFoodTime("Merienda");
         else if(actualHour >= 19) setFoodTime("Cena");
-
-        console.log(actualHour);
     }, []);
 
     const [foodList, setFoodList] = useState<Food[]>([]);
@@ -32,7 +30,6 @@ function Home(){
     }, []);
 
     useEffect(() => {
-        console.log(foodList);
         const filteredFoods = foodList.filter(x => x.eat_time == foodTime);
         setFoodListDisplay(filteredFoods)
 
@@ -47,8 +44,8 @@ function Home(){
                         <span>Time:</span>
                         <div>
                             <button onClick={() => setFoodTime("Desayuno")} className={`btn ${foodTime == "Desayuno" ? "active" : ""}`}>Desayuno</button>
-                            <button onClick={() => setFoodTime("Comida")} className={`btn ${foodTime == "Comida" ? "active" : ""}`}>Comida</button>
-                            <button onClick={() => setFoodTime("Almuerzo")} className={`btn ${foodTime == "Almuerzo" ? "active" : ""}`}>Almuerzo</button>
+                            <button onClick={() => setFoodTime("Comida")} className={`btn ${foodTime == "Comida" ? "active" : ""}`}>Almuerzo</button>
+                            <button onClick={() => setFoodTime("Almuerzo")} className={`btn ${foodTime == "Almuerzo" ? "active" : ""}`}>Merienda</button>
                             <button onClick={() => setFoodTime("Cena")} className={`btn ${foodTime == "Cena" ? "active" : ""}`}>Cena</button>
                         </div>
                     </div>
