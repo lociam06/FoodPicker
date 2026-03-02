@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api-externa/:path*",
+      "destination": "http://foodpickerapi.somee.com/api/:path*"
+    }
+  ]
+}
